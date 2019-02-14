@@ -1,24 +1,184 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="26F-Qg-U8T">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Favorites-->
+        <scene sceneID="OVK-1U-rk7">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController id="OS3-Fv-8d9" customClass="FavoritesVC" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sEJ-Ls-McK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ws1-cT-Fap"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="starIcon" id="t9D-mt-PfH"/>
+                    <navigationItem key="navigationItem" id="4Pe-Th-OGg"/>
+                    <connections>
+                        <segue destination="h3H-ti-hTA" kind="show" identifier="toDetailsVC" id="lx0-1m-pEh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Qk-WU-3Sh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="473" y="701"/>
+        </scene>
+        <!--Pokedex-->
+        <scene sceneID="Aye-GX-gIp">
+            <objects>
+                <viewController id="vi0-Nc-yDc" customClass="SearchVC" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xH0-Vf-VME">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yX6-9u-yfT"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pokedex" image="pokeballIcon" id="9Kz-UZ-hkC"/>
+                    <navigationItem key="navigationItem" id="LJT-j9-uyh"/>
+                    <connections>
+                        <segue destination="h3H-ti-hTA" kind="show" identifier="toDetailsVC" id="Yf1-nf-djr"/>
+                        <segue destination="rpe-OM-CCd" kind="show" identifier="toResultsVC" id="6je-dd-pSD"/>
+                        <segue destination="YSW-Ox-tYA" kind="show" identifier="toFilter" id="GFs-5m-4Xd"/>
+                        <segue destination="2XG-wW-56m" kind="show" identifier="toRandom" id="0U7-CC-6P5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0D-Up-jvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="473" y="-187"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="gLi-Qc-Ack">
+            <objects>
+                <tabBarController id="26F-Qg-U8T" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="L6Y-lp-CTA"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qFO-QQ-1eg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xc3-Cw-1EO" kind="relationship" relationship="viewControllers" id="Nhq-z7-h3U"/>
+                        <segue destination="d3t-ZE-diM" kind="relationship" relationship="viewControllers" id="Qby-oj-ars"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odp-US-Ih4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-918" y="-143"/>
+        </scene>
+        <!--DetailsVC-->
+        <scene sceneID="9Tg-z0-c9P">
+            <objects>
+                <viewController id="h3H-ti-hTA" customClass="DetailsVC" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sHW-s7-Pyq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9Cc-9U-GNa"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hdt-TM-Twq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2578" y="-532"/>
+        </scene>
+        <!--ResultsVC-->
+        <scene sceneID="baE-Jz-hA1">
+            <objects>
+                <viewController id="rpe-OM-CCd" customClass="ResultsVC" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vby-y6-Qol">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Cix-R4-apV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bem-vM-nQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1705" y="278"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="DLX-F0-66j">
+            <objects>
+                <navigationController id="xc3-Cw-1EO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="jdc-Sx-98h"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pXV-Nc-1js">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vi0-Nc-yDc" kind="relationship" relationship="rootViewController" id="Kac-3x-zzK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="72W-tU-99C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="175" y="-942"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="EoI-aG-oVH">
+            <objects>
+                <navigationController id="d3t-ZE-diM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="85P-P8-ec5"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I9v-3H-yFE">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="OS3-Fv-8d9" kind="relationship" relationship="rootViewController" id="MZa-RH-fPX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XHg-r0-t48" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-542" y="700"/>
+        </scene>
+        <!--FilterVC-->
+        <scene sceneID="Nck-fM-TNK">
+            <objects>
+                <viewController id="YSW-Ox-tYA" customClass="FilterVC" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="47I-tN-WaY" customClass="F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Vl8-vJ-UKD"/>
+                    </view>
+                    <connections>
+                        <segue destination="rpe-OM-CCd" kind="show" identifier="toFilteredResults" id="nbH-Rz-x0h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="065-fN-K9b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1630" y="-1164"/>
+        </scene>
+        <!--RandomVC-->
+        <scene sceneID="GbJ-Qm-koK">
+            <objects>
+                <viewController id="2XG-wW-56m" customClass="RandomVC" customModule="Pokedex" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VUh-jI-5xz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Fbt-4Z-jJu"/>
+                    </view>
+                    <connections>
+                        <segue destination="h3H-ti-hTA" kind="show" identifier="toDetailsVC" id="gYb-Fg-ggD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OSB-Qt-JSH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1630" y="-1888"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pokeballIcon" width="25" height="25"/>
+        <image name="starIcon" width="30" height="30"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="nbH-Rz-x0h"/>
+        <segue reference="gYb-Fg-ggD"/>
+    </inferredMetricsTieBreakers>
 </document>
