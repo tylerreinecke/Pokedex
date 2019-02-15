@@ -42,6 +42,7 @@
 		8CC8429A2215FC7400DF42B7 /* PopulateRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC842992215FC7400DF42B7 /* PopulateRandom.swift */; };
 		8CC8429C22160A5800DF42B7 /* FilterVC-TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8429B22160A5800DF42B7 /* FilterVC-TableView.swift */; };
 		8CC8429E22160A7800DF42B7 /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8429D22160A7800DF42B7 /* TypeCell.swift */; };
+		8CC842A022163BE100DF42B7 /* narrowList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC8429F22163BE100DF42B7 /* narrowList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		8CC842992215FC7400DF42B7 /* PopulateRandom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulateRandom.swift; sourceTree = "<group>"; };
 		8CC8429B22160A5800DF42B7 /* FilterVC-TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterVC-TableView.swift"; sourceTree = "<group>"; };
 		8CC8429D22160A7800DF42B7 /* TypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeCell.swift; sourceTree = "<group>"; };
+		8CC8429F22163BE100DF42B7 /* narrowList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = narrowList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 				8CC8420E2210EEC900DF42B7 /* PokemonGenerator.swift */,
 				8CC8424722139A0000DF42B7 /* PokeImageView.swift */,
 				8CC842992215FC7400DF42B7 /* PopulateRandom.swift */,
+				8CC8429F22163BE100DF42B7 /* narrowList.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				8CC84229221239EE00DF42B7 /* PokeTCell.swift in Sources */,
 				8CC842212211FFBE00DF42B7 /* SearchVC-UI.swift in Sources */,
 				8CC8429A2215FC7400DF42B7 /* PopulateRandom.swift in Sources */,
+				8CC842A022163BE100DF42B7 /* narrowList.swift in Sources */,
 				8CC8424A2214D0A700DF42B7 /* FavoritesVC-TableView.swift in Sources */,
 				8CC8421F2211FFB000DF42B7 /* SearchVC.swift in Sources */,
 				8CC8423922124C4800DF42B7 /* ResultsVC.swift in Sources */,

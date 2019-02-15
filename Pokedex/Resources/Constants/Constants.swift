@@ -11,6 +11,7 @@ import UIKit
 class Constants {
     
     static let pokemon = PokemonGenerator.getPokemonArray()
+    static var filtered = [Pokemon]()
     static var favorites = [Pokemon]()
     static var random20 = [Pokemon]()
     static let imageCache = NSCache<NSString, UIImage>()

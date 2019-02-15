@@ -34,21 +34,12 @@ class PokeTCell: UITableViewCell {
         
         nameLabel = UILabel(frame: CGRect(x: pokePic.frame.maxX + 10, y: 0, width: numLabel.frame.minX - (pokePic.frame.maxX + 10), height: 50))
         nameLabel.textAlignment = .left
-        //nameLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 40)
         
         contentView.addSubview(nameLabel)
-        /*
-         nameTypeLabel = UILabel(frame: CGRect(x: pokePic.frame.maxX + 10, y: nameLabel.frame.maxY, width: numLabel.frame.minX - (pokePic.frame.maxX + 10), height: 25))
-         nameTypeLabel.textAlignment = .left
-         contentView.addSubview(nameTypeLabel)
-         */
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     func updatePokemon(to newPokemon: Pokemon) {

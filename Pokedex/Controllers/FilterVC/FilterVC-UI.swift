@@ -23,15 +23,10 @@ extension FilterVC {
     
     func setupHealth() {
         self.minHealth = 0
-        
-        healthLabel = UILabel(frame: CGRect(x: 50, y: 115, width: 150, height: 40))
-        healthLabel.center = CGPoint(x: attackLabel.frame.minX / 2, y: attackLabel.frame.midY)
-        healthLabel.textAlignment = .center
-        healthLabel.text = "Min HP: \(minHealth!)"
-        view.addSubview(healthLabel)
-        
-        setHealth = UITextField(frame: CGRect(x: healthLabel.frame.minX, y: healthLabel.frame.maxY + 10, width: healthLabel.frame.width, height: healthLabel.frame.height))
-        setHealth.center = CGPoint(x: healthLabel.frame.midY, y: healthLabel.frame.maxY + 20)
+
+        setHealth = UITextField(frame: CGRect(x: 50, y: 115, width: 150, height: 40))
+        setHealth.center = CGPoint(x: setAttack.frame.minX / 2, y: setAttack.frame.midY)
+        setHealth.textAlignment = .center
         setHealth.adjustsFontSizeToFitWidth = true
         setHealth.placeholder = "Set Min HP: "
         view.addSubview(setHealth)
@@ -40,14 +35,9 @@ extension FilterVC {
     func setupAttack() {
         self.minAttack = 0
         
-        attackLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 40))
-        attackLabel.center = CGPoint(x: view.frame.width / 2, y: 135)
-        attackLabel.textAlignment = .center
-        attackLabel.text = "Min ATK: \(minAttack!)"
-        view.addSubview(attackLabel)
-        
-        setAttack = UITextField(frame: CGRect(x: attackLabel.frame.minX, y: attackLabel.frame.maxY + 10, width: attackLabel.frame.width, height: attackLabel.frame.height))
-        setAttack.center = CGPoint(x: attackLabel.frame.midY, y: attackLabel.frame.maxY + 20)
+        setAttack = UITextField(frame: CGRect(x: 0, y: 0, width: 150, height: 40))
+        setAttack.center = CGPoint(x: view.frame.width / 2, y: 135)
+        setAttack.textAlignment = .center
         setAttack.adjustsFontSizeToFitWidth = true
         setAttack.placeholder = "Set Min ATK: "
         view.addSubview(setAttack)
@@ -57,21 +47,16 @@ extension FilterVC {
     func setupDefense() {
         self.minDefense = 0
         
-        defenseLabel = UILabel(frame: CGRect(x: view.frame.width - 150, y: 115, width: 150, height: 40))
-        defenseLabel.center = CGPoint(x: attackLabel.frame.maxX + ((view.frame.width - attackLabel.frame.maxX) / 2), y: attackLabel.frame.midY)
-        defenseLabel.textAlignment = .center
-        defenseLabel.text = "Min DEF: \(minDefense!)"
-        view.addSubview(defenseLabel)
-        
-        setDefense = UITextField(frame: CGRect(x: defenseLabel.frame.minX, y: defenseLabel.frame.maxY + 10, width: defenseLabel.frame.width, height: defenseLabel.frame.height))
-        setDefense.center = CGPoint(x: defenseLabel.frame.midY, y: defenseLabel.frame.maxY + 20)
+        setDefense = UITextField(frame: CGRect(x: view.frame.width - 150, y: 115, width: 150, height: 40))
+        setDefense.center = CGPoint(x: setAttack.frame.maxX + ((view.frame.width - setAttack.frame.maxX) / 2), y: setAttack.frame.midY)
+        setDefense.textAlignment = .center
         setDefense.adjustsFontSizeToFitWidth = true
         setDefense.placeholder = "Set Min DEF: "
         view.addSubview(setDefense)
     }
     
     func setupTypeTableView() {
-        typeTableView = UITableView(frame: CGRect(x: 0, y: 200, width: view.frame.width, height: view.frame.height - 200 - 70))
+        typeTableView = UITableView(frame: CGRect(x: 0, y: 200, width: view.frame.width, height: view.frame.height - 200 - 150))
         typeTableView.register(TypeCell.self,forCellReuseIdentifier: "typeCell")
         typeTableView.delegate = self
         typeTableView.dataSource = self
@@ -89,6 +74,8 @@ extension FilterVC {
     }
     
     @objc func filter() {
+        adjustValues()
+        narrowList.narrowFilter(selectedTypes, minHealth, minAttack, minDefense)
         self.performSegue(withIdentifier: "toFilteredResults", sender: self)
     }
     
@@ -97,4 +84,17 @@ extension FilterVC {
             nextVC.types = selectedTypes
         }
     }
+
+    func adjustValues() {
+        if let newMinHealth = Int(setHealth.text!) {
+            minHealth = newMinHealth
+        }
+        if let newMinAttack = Int(setAttack.text!) {
+            minAttack = newMinAttack
+        }
+        if let newMinDefense = Int(setDefense.text!) {
+            minDefense = newMinDefense
+        }
+    }
+
 }

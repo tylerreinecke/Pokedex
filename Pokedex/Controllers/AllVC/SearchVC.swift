@@ -18,6 +18,7 @@ class SearchVC: UIViewController {
     
     var viewSelect : UISegmentedControl!
     var searchBar : UISearchBar!
+    var searchButton : UIButton!
     var filterButton : UIButton!
     var randomizeButton : UIButton!
     

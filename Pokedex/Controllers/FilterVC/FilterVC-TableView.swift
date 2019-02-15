@@ -38,6 +38,10 @@ extension FilterVC: UITableViewDataSource, UITableViewDelegate {
         selectedTypes.append(Constants.allTypes[indexPath.row])
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let toRemove = Constants.allTypes[indexPath.row]
+        selectedTypes = selectedTypes.filter({$0 != toRemove})
+    }
     
 
 }

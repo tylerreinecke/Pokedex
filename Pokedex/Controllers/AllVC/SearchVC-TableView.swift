@@ -38,14 +38,4 @@ extension SearchVC : UITableViewDataSource, UITableViewDelegate {
         pokemon = Constants.pokemon[indexPath.row]
         self.performSegue(withIdentifier: "toDetailsVC", sender: self)
     }
-    
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let nextVC = segue.destination as? DetailsVC {
-            nextVC.pokemon = pokemon
-        }
-    }
-    */
-    
-    
 }

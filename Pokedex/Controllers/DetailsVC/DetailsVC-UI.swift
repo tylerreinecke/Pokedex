@@ -9,25 +9,7 @@
 import UIKit
 
 extension DetailsVC {
-    /*
-    //Put UI vars here//
-    var pokemon : Pokemon!
-    
-    let pokePic : UIImageView!
-    let numLabel : UILabel!
-    let numLabel : UILabel!
-    let speciesLabel : UILabel!
-    let healthLabel : UILabel!
-    let attackLabel : UILabel!
-    let defenseLabel : UILabel!
-    let spAttackLabel : UILabel!
-    let spDefenseLabel : UILabel!
-    let speedLabel : UILabel!
-    let types : UILabel!
-    let webButton : UIButton!
-    let addFavoritesButton : UIBarButtonItem!
-    */
-    
+
     func initUI() {
         self.title = "Details"
         
@@ -74,36 +56,57 @@ extension DetailsVC {
         healthLabel.text = "HP: \(pokemon.health!)"
         healthLabel.font = UIFont.boldSystemFont(ofSize: 30.0)
         healthLabel.textAlignment = .center
+        healthLabel.textColor = Constants.reddish
         view.addSubview(healthLabel)
         
         attackLabel = UILabel(frame: CGRect(x: 0, y: healthLabel.frame.maxY + 10, width: view.frame.width, height: 30))
         attackLabel.text = "ATK: \(pokemon.attack!)"
         attackLabel.font = UIFont.boldSystemFont(ofSize: 30.0)
         attackLabel.textAlignment = .center
+        attackLabel.textColor = Constants.reddish
         view.addSubview(attackLabel)
         
         defenseLabel = UILabel(frame: CGRect(x: 0, y: attackLabel.frame.maxY + 10, width: view.frame.width, height: 30))
         defenseLabel.text = "DEF: \(pokemon.defense!)"
         defenseLabel.font = UIFont.boldSystemFont(ofSize: 30.0)
         defenseLabel.textAlignment = .center
+        defenseLabel.textColor = Constants.reddish
         view.addSubview(defenseLabel)
         
         spAttackLabel = UILabel(frame: CGRect(x: 0, y: defenseLabel.frame.maxY + 10, width: view.frame.width, height: 30))
         spAttackLabel.text = "SPA: \(pokemon.specialAttack!)"
         spAttackLabel.font = UIFont.boldSystemFont(ofSize: 30.0)
         spAttackLabel.textAlignment = .center
+        spAttackLabel.textColor = Constants.reddish
         view.addSubview(spAttackLabel)
         
         spDefenseLabel = UILabel(frame: CGRect(x: 0, y: spAttackLabel.frame.maxY + 10, width: view.frame.width, height: 30))
         spDefenseLabel.text = "SPD: \(pokemon.specialDefense!)"
         spDefenseLabel.font = UIFont.boldSystemFont(ofSize: 30.0)
         spDefenseLabel.textAlignment = .center
+        spDefenseLabel.textColor = Constants.reddish
         view.addSubview(spDefenseLabel)
         
         speedLabel = UILabel(frame: CGRect(x: 0, y: spDefenseLabel.frame.maxY + 10, width: view.frame.width, height: 30))
         speedLabel.text = "SPE: \(pokemon.speed!)"
         speedLabel.font = UIFont.boldSystemFont(ofSize: 30.0)
         speedLabel.textAlignment = .center
+        speedLabel.textColor = Constants.reddish
         view.addSubview(speedLabel)
+        
+        types = UILabel(frame: CGRect(x: 0, y: numLabel.frame.maxY, width: view.frame.width, height: 60))
+        types.text = ""
+        for type in pokemon.types {
+            if type == pokemon.types[pokemon.types.count-1] {
+                toAdd = "\(type)"
+            } else {
+                toAdd = "\(type), "
+            }
+            types.text = types.text! + toAdd
+        }
+        types.font = UIFont.systemFont(ofSize: 30.0)
+        types.textAlignment = .center
+        view.addSubview(types)
+     
     }
 }

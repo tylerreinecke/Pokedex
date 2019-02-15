@@ -19,7 +19,5 @@ class FavoritesVC: UIViewController {
         self.navigationItem.title = "Favorites"
         
         setupTableView()
-       
-        // Do any additional setup after loading the view.
     }
 }

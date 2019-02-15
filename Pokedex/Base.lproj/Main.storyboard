@@ -97,10 +97,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Cix-R4-apV"/>
                     </view>
+                    <connections>
+                        <segue destination="h3H-ti-hTA" kind="show" identifier="toDetailsVC" id="SZQ-Np-Tj1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bem-vM-nQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1705" y="278"/>
+            <point key="canvasLocation" x="2343" y="401"/>
         </scene>
         <!--Item-->
         <scene sceneID="DLX-F0-66j">
@@ -179,6 +182,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nbH-Rz-x0h"/>
-        <segue reference="gYb-Fg-ggD"/>
+        <segue reference="SZQ-Np-Tj1"/>
     </inferredMetricsTieBreakers>
 </document>

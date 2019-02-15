@@ -21,7 +21,6 @@ class PopulateRandom {
                 if !Constants.random20.contains(where: {$0.number == ranPokemon!.number}) {
                     Constants.random20.append(ranPokemon!)
                     self.inArray = false
-                    print(ranPokemon!.name)
                 }
                 ranPokemon = Constants.pokemon.randomElement()
             }

@@ -27,9 +27,14 @@ extension SearchVC {
         searchBar.center = CGPoint(x: view.frame.width / 2, y: 115)
         searchBar.placeholder = "Enter a Pokémon name or number:"
         searchBar.backgroundColor = .white
-        
         view.addSubview(searchBar)
         
+        searchButton = UIButton(frame: CGRect(x: searchBar.frame.maxX + 5, y: searchBar.frame.minY, width: 40, height: 30))
+        searchButton.backgroundColor = Constants.reddish
+        searchButton.layer.cornerRadius = 5
+        searchButton.setImage(UIImage(named: "searchArrow"), for: .normal)
+        searchButton.addTarget(self, action: #selector(narrowString), for: .touchUpInside)
+        view.addSubview(searchButton)
     }
     
     func setupFilterButton() {
@@ -94,24 +99,26 @@ extension SearchVC {
     }
     
     @objc func toFilter() {
+        
         self.performSegue(withIdentifier: "toFilter", sender: self)
         //pass a copy of the master pokemon array with all the non-conforming elements removed
     }
     
+    @objc func narrowString() {
+        var inputText = searchBar.text
+        if let pokemonNum = Int(inputText!) {
+            narrowList.narrowNum(pokemonNum)
+        } else {
+            narrowList.narrowString(searchBar.text!)
+        }
+        self.performSegue(withIdentifier: "toResultsVC", sender: self)
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nextVC = segue.destination as? DetailsVC {
-           nextVC.pokemon = self.pokemon
+            nextVC.pokemon = self.pokemon
         }
     }
     
     
 }
-
-
-
-/*          WAY TO SORT AND FILTER ARRAYS
- let arr = [1, 2, 3, 4, 5]
- let filtered = arr.filter { (x) -> Bool in
- x > 3
- }
- */
